@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta http-equiv="charset" content="utf-8">
+<title>GreedyCat在线点餐系统</title>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no,email=no,adress=no" name="format-detection">
+<script src="assets/vendor/jquery/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="assets/vendor/jquery-cookie/jquery.cookie.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/common.css" type="text/css"/>
+</head>
+<body>
+	<div id="content">
+	</div>
+	<a id="toCart" href="cart.html"><img src="assets/img/shopping_cart.png">购物车</a>
+<script>
+	$(window).on('ready',function() {
+		$.ajax({
+			type : "POST",
+			url : "/glance/web/foods/search",
+			dataType : "json",
+			data : JSON.stringify({
+				foodName : $('#searchButton').val()
+			}),
+			contentType : "application/json; charset=utf-8",
+			success : function(msg) {
+				var map = msg[0];
+				var cartCookie = $.cookie('cart');
+				var cart = null;
+				var cartMap = new Map();
+				if(cartCookie != null && cartCookie != "null" && cartCookie != "") {
+					cart = JSON.parse(cartCookie);
+					for(var i = 0; i < cart.length; i++){
+						cartMap.set(cart[i].foodId,cart[i].num);
+					}
+				}
+				var _html = '';
+				$.each(map,function(key,values){     
+					_html += '<h1>' + key + '</h1>';
+					for(var i=0;i<values.length;i++){
+						var food = values[i];
+						var has = '';
+						var num = 0;
+						if(cartMap.has(food.id)){
+							has = 'add'
+							num = cartMap.get(food.id);
+						}
+						_html += '<div class="food ' + (num > 0 ? has : '') + '" data-num="' + num +'"><span class="num';
+						if(num > 0){
+							_html += ' has">' + num;
+						}else{
+							_html += '">';
+						}
+						_html += '</span><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525717872058&di=6e5bfcfea35c2bc8c7e0aaed37a87757&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F9a504fc2d562853574b40c099bef76c6a7ef6346.jpg"></img>'
+								+ '<span class="food-name">' + food.foodName + '</span>'
+								+ '<span class="desc">' + food.description + '</span>'
+								+ '<span class="price">￥' + food.price/100 + '</span>'
+								+ '<div class="add-cart" data-id="' + food.id + '">+</div>'
+								+ '<div class="sub-cart '+ (num <= 0 ? 'hidden' : '') + '" data-id="' + food.id + '">-</div>'
+								+ '</div>';
+								//+ food.id + ' ' + food.foodName + ' ' + food.price + ' ' + food.description + '</div>';
+					}
+				 }); 
+				
+				$('#content').html(_html);
+				
+				$('.add-cart').click(function(){
+					var foodId = $(this).data('id');
+					var flag = false;
+					var cartCookie = $.cookie('cart');
+					var cart = null;
+					if(cartCookie != null && cartCookie != "null" && cartCookie != "") {
+						cart = JSON.parse(cartCookie);
+						for(var i = 0; i < cart.length; i++){
+							if(cart[i].foodId == foodId){
+								cart[i].num++;
+								flag = true;
+							}
+						}
+					} else {
+						cart = [];
+					}
+					if(!flag) {
+						cart.push({
+							foodId : foodId,
+							num : 1
+						});
+					}
+					
+					$.cookie('cart',JSON.stringify(cart));
+					$(this).parent().addClass('add');
+					var num = $(this).parent().attr('data-num');
+					$(this).parent().attr('data-num',parseInt(num)+1);
+					$(this).parent().find('.num').addClass('has').text(parseInt(num)+1);
+					$(this).parent().find('.sub-cart').removeClass('hidden');
+				});
+				
+				$('.sub-cart').click(function(){
+					var foodId = $(this).data('id');
+					var cartCookie = $.cookie('cart');
+					var cart = null;
+					if(cartCookie != null && cartCookie != "null" && cartCookie != "") {
+						cart = JSON.parse(cartCookie);
+						for(var i = 0; i < cart.length; i++){
+							if(cart[i].foodId == foodId && cart[i].num > 0){
+								cart[i].num--;
+							}
+						}
+					}
+					
+					$.cookie('cart',JSON.stringify(cart));
+					var num = $(this).parent().attr('data-num');
+					if(num == 1){
+						$(this).parent().removeClass('add');
+						$(this).parent().attr('data-num',0);
+						$(this).parent().find('.num').removeClass('has').text("");
+						$(this).addClass('hidden');
+					} else if (num > 1){
+						$(this).parent().attr('data-num',parseInt(num)-1);
+						$(this).parent().find('.num').text(parseInt(num)-1);
+					}
+				});
+			},
+			error : function(){
+				alert(msg);
+			}
+		});
+	})
+</script>
+</body>
+</html>

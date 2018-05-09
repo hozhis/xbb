@@ -1,0 +1,329 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #dfdfdf;
+}
+
+body, input, div, span, label, p, button {
+	font-size: 12px;
+}
+
+input {
+	border: 1px solid #bebebe;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:focus {
+	border: none;
+	-webkit-appearance: none;
+	outline: none;
+}
+
+.food {
+	width: 180px;
+	height: auto;
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #d5d5d5;
+	position: relative;
+}
+
+.food img {
+	width: 160px;
+	height: auto;
+	margin-bottom: 5px;
+	alt: "greedycat餐厅"
+}
+
+.food span {
+	display: block;
+}
+
+.food-name {
+	margin-bottom: 5px;
+}
+
+.price {
+	color: rgb(255, 80, 0)
+}
+
+.desc {
+	margin-bottom: 5px;
+	font-size: 10px;
+	color: #aeaeae;
+	min-height: 20px;
+}
+
+.add-cart {
+	width: 30px;
+	height: 30px;
+	background-color: #fd2b2b;
+	text-align: center;
+	line-height: 27px;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 15px;
+	position: absolute;
+	right: 10px;
+	bottom: 30px;
+	cursor: pointer;
+}
+
+.sub-cart {
+	width: 30px;
+	height: 30px;
+	background-color: #fd2b2b;
+	text-align: center;
+	line-height: 27px;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 15px;
+	position: absolute;
+	right: 10px;
+	bottom: 1px;
+	cursor: pointer;
+}
+
+#content {
+	padding: 40px;
+	width: 1080px;
+	margin: 0 auto;
+	background-color: #fff;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	background-color: #21348c;
+	color: #fff;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.food.add {
+	border-color: #fd2b2b;
+}
+
+.add-cart:hover, .add-cart:hover, .sub-cart:hover, .sub-cart:hover {
+	background-color: #a91d1d;
+}
+
+.search-area {
+	margin-left: 110px;
+}
+
+.search-area button {
+	margin-left: 5px;
+}
+
+.num.has {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	z-index: 999;
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	background-color: red;
+	border-radius: 10px;
+	line-height: 20px;
+	color: #fff;
+}
+
+table {
+	border: 1px solid #21348c;
+	padding: 0;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+thead {
+	border-bottom: 1px solid #d5d5d5;
+	background-color: #384eb4;
+	color: #fff;
+}
+
+thead tr {
+	font-weight: bold;
+	font-family: verdana, arial, sans-serif;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #c4c5cb61;
+}
+
+tr {
+	border-bottom: 1px solid #d5d5d5;
+}
+
+tr:last-child {
+	border-bottom: 0px;
+}
+
+td {
+	border-right: 1px solid #d5d5d5;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 12px;
+	display: inline-block;
+	min-height: 30px;
+	line-height: 20px;
+}
+
+td:last-child {
+	border-right: 0px;
+}
+
+table button {
+	background-color: transparent;
+	border: none;
+	color: #384eb4;
+	width: 40px;
+}
+
+.hidden {
+	display: none;
+}
+
+.pop-box {
+	width: 300px;
+	background-color: #ffffff;
+	position: absolute;
+	left: calc(50% - 150px);
+	top: calc(50% - 225px);
+	border-radius: 4px;
+}
+
+.pop-shade {
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.45;
+}
+
+.pop-header {
+	height: 40px;
+	width: 100%;
+	padding: 5px 10px;
+	background-color: #384eb4;
+	line-height: 30px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #fff;
+	border-radius: 4px 4px 0 0;
+}
+
+.pop-content {
+	width: 100%;
+	min-height: 40px;
+	padding: 5px 15px;
+}
+
+.pop-tip {
+	min-height: 30px;
+	display: block;
+	line-height: 30px;
+}
+
+.pop-footer {
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid #bebebe;
+	text-align: center;
+	padding: 5px 10px;
+}
+
+.row {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+
+.row span {
+	display: inline-block;
+	width: 70px;
+	margin-right: 10px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.row input, .row select {
+	width: 150px;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 5px;
+	border: 1px solid #bebebe;
+}
+
+.cancel, .primary {
+	width: 60px;
+	height: 25px;
+	background-color: #beb8b8;
+	border: 1px solid #adadad;
+	text-align: center;
+	border-radius: 2px;
+	padding: 3px 10px;
+	color: #fff;
+}
+
+.cancel {
+	margin-right: 10px;
+}
+
+.primary {
+	background-color: #384eb4;
+	border-color: #21348c;
+}
+
+.cancel:hover {
+	background-color: #9e9b9b;
+	border-color: #909090;
+}
+
+.primary:hover {
+	background-color: #34479c;
+	border-color: #1d2b6f;
+}
+
+.order-item {
+	height: 30px;
+	padding: 5px 10px;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.order-item:last-child {
+	border-bottom: 0;
+}
+
+#toCart {
+	position: fixed;
+	right: calc(50% - 600px);
+	bottom: 20px;
+	z-index: 999;
+	display: block;
+	width: 50px;
+	line-height: 20px;
+	border: 1px solid #bebebe;
+	text-align: center;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+#toCart img {
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+}

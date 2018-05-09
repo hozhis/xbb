@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="charset" content="utf-8">
+<title>GreedyCat在线点餐系统</title>
+<meta charset="utf-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no,email=no,adress=no" name="format-detection">
+<script src="assets/vendor/jquery/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="assets/vendor/jquery-cookie/jquery.cookie.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/common.css" type="text/css"/>
+</head>
+<body>
+	<div id="content">
+		<span>购物车页面要从cookie里面取出所有在购物车的菜品，用户可以移除菜品和修改菜品数量</span>
+		<button class="submit">提交</button>
+	</div>
+<script>
+	$('.submit').click(function(){
+		// TODO Ajax调提交订单的接口
+		// 然后在success回调函数中跳转页面
+		window.location.href = 'success.html';
+	});
+</script>
+</body>
+</html>
