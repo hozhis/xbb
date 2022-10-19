@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-19T02:17:17.590Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="D8vSfY9qjmkZpP4OjAkP" version="20.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-19T02:19:18.961Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="d1IGkvYXmyFdDX9qIdSi" version="20.4.1" type="github">
   <diagram name="Page-1" id="c7488fd3-1785-93aa-aadb-54a6760d102a">
     <mxGraphModel dx="1289" dy="731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="2b4e8129b02d487f-1" value="用户体验广告交互流程图" style="swimlane;html=1;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;rounded=0;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="1" vertex="1">
           <mxGeometry x="120" y="60" width="860" height="470" as="geometry" />
         </mxCell>
-        <mxCell id="2b4e8129b02d487f-2" value="流量主（Gemgala）" style="swimlane;html=1;startSize=20;horizontal=0;" parent="2b4e8129b02d487f-1" vertex="1">
+        <mxCell id="2b4e8129b02d487f-2" value="流量主（Gemgala）" style="swimlane;html=1;startSize=20;horizontal=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="2b4e8129b02d487f-1" vertex="1">
           <mxGeometry y="20" width="860" height="150" as="geometry" />
         </mxCell>
         <mxCell id="2b4e8129b02d487f-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=classicThin;endFill=1;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=8" parent="2b4e8129b02d487f-2" source="2b4e8129b02d487f-5" target="2b4e8129b02d487f-6" edge="1">
@@ -94,7 +94,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2b4e8129b02d487f-4" value="广告主（Chamet）" style="swimlane;html=1;startSize=20;horizontal=0;" parent="2b4e8129b02d487f-1" vertex="1">
+        <mxCell id="2b4e8129b02d487f-4" value="广告主（Chamet）" style="swimlane;html=1;startSize=20;horizontal=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="2b4e8129b02d487f-1" vertex="1">
           <mxGeometry y="320" width="860" height="150" as="geometry" />
         </mxCell>
         <mxCell id="_rvxxKRfaDbZ1rV0Di5T-4" value="查询用户状态&lt;br&gt;并返回" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="2b4e8129b02d487f-4" vertex="1">
